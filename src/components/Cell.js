@@ -130,7 +130,10 @@ export default function Cell(props) {
           return parseInt(value1) + parseInt(value2);
         }else if(operation.toLowerCase() === 'mul'){
           return parseInt(value1) * parseInt(value2);
-        }else{
+        }else if(operation.toLowerCase() === 'sub'){
+          return parseInt(value1) - parseInt(value2);
+        }
+        else{
           return "INVALID"
         }
       }catch(err){
