@@ -174,10 +174,12 @@ export default function Cell(props) {
 
 
   if (props.x === 0) {
+    css.backgroundColor = "#e8e5e5";
     return <span style={css}>{props.y}</span>;
   }
 
   if (props.y === 0) {
+    css.backgroundColor = "#e8e5e5";
     const header = columnHeader(props.x);
     return (
       <span onKeyPress={onKeyPressOnSpan} style={css} role="presentation">

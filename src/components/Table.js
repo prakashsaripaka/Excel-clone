@@ -101,7 +101,7 @@ export default function Table(props) {
   }
 
 
-  const handleTableDataOnInsertRow = ({ x, y }, type) => {
+  const handleTableDataOnInsertRow = ({ y }, type) => {
     const currCopy = Object.assign({}, data);
     const insertIndex = y;
     const newObj = {};
@@ -152,12 +152,18 @@ export default function Table(props) {
 
   return (
     <>
-    <header onClick={handleTableActions}>
-            <button name="insert-row-before">INSERT ROW BEFORE</button>
-            <button name="insert-row-after">INSERT ROW AFTER</button>
-            <button name="insert-column-before">INSERT COLUMN BEFORE</button>
-            <button name="insert-column-after">INSERT COLUMN AFTER</button>
-            <button name="sort">SORT</button>
+    <header className="excel-header" onClick={handleTableActions}>
+            <div className="dropdown">
+                <button className="dropbtn">Dropdown</button>
+                <div className="dropdown-content">
+                <button name="insert-row-before">INSERT ROW BEFORE</button>
+                <button name="insert-row-after">INSERT ROW AFTER</button>
+                <button name="insert-column-before">INSERT COLUMN BEFORE</button>
+                <button name="insert-column-after">INSERT COLUMN AFTER</button>
+                </div>
+            </div>
+           
+            <button name="sort" className="sort">Sort</button>
     </header>
     <section>
         {getRows()};
