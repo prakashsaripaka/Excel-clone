@@ -16,7 +16,7 @@ export default function Table(props) {
     setSelectedCell({ x, y })
   }
   
-  const handleTableInsert = (e) => {
+  const handleTableActions = (e) => {
     const targetName = e.target.name;
     if (targetName.indexOf("insert-row") >= 0) {
       handleTableDataOnInsertRow(selectedCell, targetName)
@@ -29,13 +29,43 @@ export default function Table(props) {
       const currColumns = tableMeta.columns;
       setTableMeta({ ...tableMeta, columns: currColumns + 1 });
     }
+
+    if (targetName.indexOf("sort") >= 0 ) {
+        handleTableDataSortbyColumn(selectedCell.x);
+      }
   };
+
+  const handleTableDataSortbyColumn = (column) => {
+    const currCopy = Object.assign({}, data);
+    const tempArray = []
+    for(let ele in currCopy){
+        tempArray.push(currCopy[ele]);
+    }
+    let sortedArr = tempArray.sort((a, b) => {
+        if( isNaN(parseInt(a[column]))){
+            if (a[column] < b[column]) {
+                return -1;
+            }
+            if (a[column] > b[column]) {
+                return 1;
+            }
+            return 0;
+        }else{
+            return a[column] - b[column];
+        }
+        
+    });
+    
+    const sortedObj = {};
+    for(let [index, ele] of sortedArr.entries()){
+        sortedObj[index +1] = ele;
+    }
+    setData(sortedObj);
+  }
 
   const handleTableDataOnInsertColumn = ({ x }, type) => {
     const currCopy = Object.assign({}, data);
-
     const insertIndex = x;
-   
     if(type === "insert-column-after"){
         for(let key in currCopy){
             let innerObj = currCopy[key]
@@ -67,7 +97,6 @@ export default function Table(props) {
           currCopy[key] = newObj;
         }
     }
-    //console.log("newObj", currCopy)
     setData(currCopy);
   }
 
@@ -101,6 +130,7 @@ export default function Table(props) {
     }
     setData(newObj);
   }
+  
   const getRows = () => {
     const rows = [];
     for (let y = 0; y < tableMeta.rows + 1; y += 1) {
@@ -122,11 +152,12 @@ export default function Table(props) {
 
   return (
     <>
-    <header onClick={handleTableInsert}>
+    <header onClick={handleTableActions}>
             <button name="insert-row-before">INSERT ROW BEFORE</button>
             <button name="insert-row-after">INSERT ROW AFTER</button>
             <button name="insert-column-before">INSERT COLUMN BEFORE</button>
             <button name="insert-column-after">INSERT COLUMN AFTER</button>
+            <button name="sort">SORT</button>
     </header>
     <section>
         {getRows()};
