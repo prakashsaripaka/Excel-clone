@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/excel-clone/static/css/main.5409d642.css",
-    "main.js": "/excel-clone/static/js/main.cf91681c.js",
-    "static/js/787.95849e2c.chunk.js": "/excel-clone/static/js/787.95849e2c.chunk.js",
-    "index.html": "/excel-clone/index.html",
-    "main.5409d642.css.map": "/excel-clone/static/css/main.5409d642.css.map",
-    "main.cf91681c.js.map": "/excel-clone/static/js/main.cf91681c.js.map",
-    "787.95849e2c.chunk.js.map": "/excel-clone/static/js/787.95849e2c.chunk.js.map"
+    "main.css": "/Excel-clone/static/css/main.5409d642.css",
+    "main.js": "/Excel-clone/static/js/main.d460a369.js",
+    "static/js/787.95849e2c.chunk.js": "/Excel-clone/static/js/787.95849e2c.chunk.js",
+    "index.html": "/Excel-clone/index.html",
+    "main.5409d642.css.map": "/Excel-clone/static/css/main.5409d642.css.map",
+    "main.d460a369.js.map": "/Excel-clone/static/js/main.d460a369.js.map",
+    "787.95849e2c.chunk.js.map": "/Excel-clone/static/js/787.95849e2c.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.5409d642.css",
-    "static/js/main.cf91681c.js"
+    "static/js/main.d460a369.js"
   ]
 }
