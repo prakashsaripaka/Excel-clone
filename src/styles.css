@@ -13,43 +13,60 @@
     align-items: center;
   }
 
+  .App .sheet-wrapper {
+    width: auto;
+    overflow-x: scroll;
+    overflow-y: scroll;
+    white-space: nowrap;
+    display: flex;
+    flex-direction: column;
+    /* justify-content: flex-start; */
+    align-items: flex-start;
+  }
+
   /* dropdown css */
 
-  .dropbtn {
+.drop-btn {
     background-color: #04AA6D;
     color: white;
     padding: 16px;
     font-size: 16px;
     border: none;
     cursor: pointer;
-  }
-  
-  .dropdown {
+}
+
+.dropdown {
     position: relative;
     display: inline-block;
     margin: 40px;
-  }
-  
-  .dropdown-content {
+}
+
+.dropdown-content {
     display: none;
     position: absolute;
     background-color: #f1f1f1;
     min-width: 160px;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     z-index: 1;
-  }
-  
-  .dropdown-content button {
-      
+}
+
+.dropdown-content.sort {
+    min-width: auto;
+}
+
+.dropdown-content button {
+    
     color: black;
     padding: 12px 16px;
     text-decoration: none;
     display: block;
     border: none;
     cursor: pointer;
-  }
+    width: 100%;
+    cursor: pointer;
+}
 
-  .App .excel-header  button.sort {
+.App .excel-header  button.sort {
     background-color: #04AA6D;
     padding: 16px;
     font-size: 16px;
@@ -59,10 +76,10 @@
     display: block;
     border: none;
     cursor: pointer;
-  }
-  
-  .dropdown-content button:hover {background-color: #ddd;}
-  
-  .dropdown:hover .dropdown-content {display: block;}
-  
-  .dropdown:hover .dropbtn {background-color: #3e8e41;}
+}
+
+.dropdown-content button:hover {background-color: #ddd;}
+
+.dropdown:hover .dropdown-content {display: block;}
+
+.dropdown:hover .drop-btn {background-color: #3e8e41;}
