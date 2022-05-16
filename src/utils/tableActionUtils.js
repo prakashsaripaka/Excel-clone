@@ -83,28 +83,26 @@ export const handleTableDataOnSortbyColumn = (selectedCell, type, tableData) => 
     for(let ele in currCopy){
         tempArray.push(currCopy[ele]);
     }
-    let sortedArr;
-    
-        sortedArr = tempArray.sort((a, b) => {
-            if( isNaN(parseInt(a[column]))){
-                if (a[column] < b[column]) {
-                    return -1;
-                }
-                if (a[column] > b[column]) {
-                    return 1;
-                }
-                return 0;
-            }else{
-                return a[column] - b[column];
+    let sortedArr = tempArray.sort((a, b) => {
+        if( isNaN(parseInt(a[column]))){
+            if (a[column] < b[column]) {
+                return -1;
             }
-            
-        }); 
+            if (a[column] > b[column]) {
+                return 1;
+            }
+            return 0;
+        }else{
+            return a[column] - b[column];
+        }
+        
+    }); 
     const sortedObj = {};
     if(type !== "sortInc"){
         sortedArr.reverse()
     }
     for(let [index, ele] of sortedArr.entries()){
-        sortedObj[index +1] = ele;
+        sortedObj[index + 1] = ele;
     }
     return sortedObj;
 }

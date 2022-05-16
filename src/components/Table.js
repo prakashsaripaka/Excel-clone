@@ -3,7 +3,7 @@ import {NotificationContainer, NotificationManager} from 'react-notifications';
 import Row from "./Row";
 import 'react-notifications/lib/notifications.css';
 
-import {handleTableDataOnSortbyColumn , handleTableDataOnInsertColumn, handleTableDataOnInsertRow} from './../utils/tableActions';
+import {handleTableDataOnSortbyColumn , handleTableDataOnInsertColumn, handleTableDataOnInsertRow} from '../utils/tableActionUtils';
 
 export default function Table() {
 
