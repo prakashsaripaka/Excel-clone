@@ -26,6 +26,17 @@ Your app is ready to be deployed!
 
 See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
+
+## Features 
+
+● New rows and columns can be added similar to how it’s added in google sheets
+● Features to sort the sheet A -> Z and Z -> A on each column should be allowed.
+Sorting should be with respect to that column.
+● Insert column to right/left of that column
+● Insert rows to top/bottom of that row
+● Support for adding formula functionality covering ‘SUM’,‘MULTIPLICATION’,
+‘SUBTRACTION’.
+
 ### `npm run eject`
 
 **Note: this is a one-way operation. Once you `eject`, you can't go back!**
