@@ -37,6 +37,10 @@ Sorting should be with respect to that column.
 ● Support for adding formula functionality covering ‘SUM’,‘MULTIPLICATION’,
 ‘SUBTRACTION’.
 
+
+Issues:
+1) Sorting : https://github.com/prakashsaripaka/Excel-clone/issues/1
+
 ### `npm run eject`
 
 **Note: this is a one-way operation. Once you `eject`, you can't go back!**
