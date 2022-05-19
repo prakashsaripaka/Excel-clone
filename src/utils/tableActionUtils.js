@@ -78,6 +78,7 @@ export const handleTableDataOnSortbyColumn = (selectedCell, type, tableData) => 
         NotificationManager.info('Please select a cell');
     }
     let column = selectedCell.x;
+    const objKeys = Object.keys(tableData) //to maintain the same keys in sorted object
     const currCopy = Object.assign({}, tableData);
     const tempArray = []
     for(let ele in currCopy){
@@ -89,7 +90,7 @@ export const handleTableDataOnSortbyColumn = (selectedCell, type, tableData) => 
                 return -1;
             }
             if (a[column] > b[column]) {
-                return 1;
+                return +1;
             }
             return 0;
         }else{
@@ -102,7 +103,7 @@ export const handleTableDataOnSortbyColumn = (selectedCell, type, tableData) => 
         sortedArr.reverse()
     }
     for(let [index, ele] of sortedArr.entries()){
-        sortedObj[index + 1] = ele;
+        sortedObj[objKeys[index]] = ele;
     }
     return sortedObj;
 }
